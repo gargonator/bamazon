@@ -38,7 +38,7 @@ connection.query('USE bamazon', (err, results) => {
 // ---------------------------------------------------- //
 // Helper functions
 
-
+// add initial products to store inventory database
 function insertData(filename) {
 	fs.readFile(filename, 'utf8', (err, data) => {
 		if (err) throw err;
@@ -78,6 +78,7 @@ function insertData(filename) {
 	})
 }
 
+// display stocked prodicts
 function displayTable(table) {
 	connection.query(`SELECT * from ${table}`, (err, results) => {
 		if (err) throw err;

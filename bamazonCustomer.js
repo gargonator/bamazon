@@ -21,6 +21,8 @@ connection.query(`SELECT item_id,product_name,price FROM products`, (err, result
 });
 
 // asks user for id and quantity of product they would like to purchase
+// displays total order price for successful orders, or stock out message if there are not
+// enough units in stock
 function askUser() {
 	inquirer.prompt([{
 		type: 'input',
